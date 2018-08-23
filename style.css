@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#code-wrapper {
+    padding: 16px;
+    height: 100vh;
+    display: flex;    
+}
+
+#code {
+    width: 100%;
+    overflow: hidden;
+}
+
+#paper {
+    background: rgb( 0,43,54 ); 
+    color: #111;
+    padding: 16px;
+    position: fixed; 
+    width: 50%; 
+    height: 100%; 
+    right: 0;
+    display: flex; 
+    align-items: flex-start;
+}
+
+#paper>.html{
+    background: white;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    border-radius: 15px;
+    overflow: auto;
+}
+
+.token.selector {
+    color: black;
+}
+
+.token.property {
+    color: black;
+}
+
+.token.function {
+    color: black;
+}
+
+@keyframes breath {
+    0% {
+        box-shadow: 0 0 10px white
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0,43,54,0.2)
+    }
+}
+
+
+
