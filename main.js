@@ -27,7 +27,7 @@
     }
     /*
     * 代码高亮一下吧 
-    * /
+    */
     .token.selector {
         color: #690;
     }
@@ -42,7 +42,7 @@
     }
     /*
     * 有点单调，加点呼吸效果吧
-    * /
+    */
     #code {
         animation: breath 1s infinite alternate-reverse;
     }
@@ -54,7 +54,7 @@
     }
     /*
     * 好了，开始要写我的简历了，来张白纸
-    * /
+    */
     #paper > .content {
         background: white;
         width: 100%;
