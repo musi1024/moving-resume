@@ -9,6 +9,10 @@
     * {
         transition: all 1s;    
     }
+    /* 
+    * 先给背景换个色吧
+    * 字也换个颜色
+    */
     html {
         color: rgb( 222,222,222 ); 
         background: rgb( 0,43,54 );
@@ -21,6 +25,9 @@
         border-radius: 15px;
         overflow: auto;
     }
+    /*
+    * 代码高亮一下吧 
+    * /
     .token.selector {
         color: #690;
     }
@@ -33,6 +40,9 @@
     .token.function {
         color: #DD4A68;
     }
+    /*
+    * 有点单调，加点呼吸效果吧
+    * /
     #code {
         animation: breath 1s infinite alternate-reverse;
     }
@@ -42,6 +52,9 @@
         height: 100%;
         left: 0;
     }
+    /*
+    * 好了，开始要写我的简历了，来张白纸
+    * /
     #paper > .content {
         background: white;
         width: 100%;
@@ -67,32 +80,30 @@
     `
 
     var md = `
-    # 自我介绍
+# 自我介绍
 
-    我叫 XXX
-    1990 年 1 月出生
-    XXX 学校毕业
-    自学前端半年
-    希望应聘前端开发岗位
+我叫 XXX
+2000 年 1 月出生
+XXX 学校毕业
+自学前端半年
+希望应聘前端开发岗位
 
-    # 技能介绍
+# 技能介绍
 
-    熟悉 JavaScript CSS
+熟悉 JavaScript CSS
 
-    # 项目介绍
+# 项目介绍
 
-    1. XXX 轮播
-    2. XXX 简历
-    3. XXX 画板
+1. XXX 轮播
+2. XXX 简历
+3. XXX 画板
 
-    # 联系方式
+# 联系方式
 
-    - QQ xxxxxxxx
-    - Email xxxxxxxx
-    - QQ xxxxxxxx
-    - Email xxxxxxxx
-    - 手机 xxxxxxx
-    `
+- QQ xxxxxxxx
+- Email xxxxxxxx
+- 手机 xxxxxxx
+`
 
     function writeCss(prefix, code, fn) {
         var domCode = document.querySelector('#code')
@@ -106,7 +117,7 @@
                 window.clearInterval(id)
                 fn & fn.call()
             }
-        },0)
+        },75)
     } 
 
     function creartPaper(fn) {
@@ -130,13 +141,16 @@
                 window.clearInterval(id)
                 fn & fn.call()
             }
-        },0)
+        },75)
     }
 
     function convertMarkdownToHtml(markdown, fn){
-        var domPaper = document.querySelector('#paper > .content') 
-        domPaper.className = 'html markdown-body'
-        domPaper.innerHTML = marked(markdown)
+        var div = document.createElement('div')  
+        div.className = 'markdown markdown-body'
+        div.innerHTML = marked(markdown)
+        let markdownContainer = document.querySelector('#paper > .content')
+        markdownContainer.replaceWith(div)
+        console.log(marked(markdown))
         fn && fn.call()
     }
 
